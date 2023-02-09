@@ -1,5 +1,7 @@
 package com.example.test2;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +17,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.*;
 import com.google.firebase.auth.*;
+import com.google.firebase.database.*;
+import com.google.firebase.firestore.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -42,6 +49,33 @@ public class RegisterActivity extends AppCompatActivity {
                 email = String.valueOf(EDemail.getText());
                 password = String.valueOf(EDpass.getText());
                 FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                FirebaseFirestore database = FirebaseFirestore.getInstance();
+
+                Map<String, Object> info = new HashMap<>();
+                info.put("firstName", fname);
+                info.put("lastName", lname);
+
+
+                database.collection("loginName").document(email)
+                        .set(info)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot successfully written!");
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error writing document", e);
+                            }
+                        });
+
+
+
+                CollectionReference usersRef = database.collection("loginName");
+                //DatabaseReference usersRef1 = database.getReference("FirstName");
+
 
                 if(TextUtils.isEmpty(email)) {
                     Toast.makeText(RegisterActivity.this, "Email cannot be empty!", Toast.LENGTH_SHORT).show();
@@ -72,7 +106,6 @@ public class RegisterActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 startActivity(new Intent(RegisterActivity.this,MainActivity.class));
             }
         });

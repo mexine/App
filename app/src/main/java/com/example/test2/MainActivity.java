@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,ForgotPassActivity.class));
+                startActivity(new Intent(MainActivity.this,ResetPassword.class));
             }
         });
 
@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         Button btn3 = findViewById(R.id.button_main);
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-        /*
-REMOVE COMMENT TO ALLOW LOGIN TO PROCEED WITHOUT CREDENTIALS
+
+//REMOVE COMMENT TO ALLOW LOGIN TO PROCEED WITHOUT CREDENTIALS
 
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,10 +62,10 @@ REMOVE COMMENT TO ALLOW LOGIN TO PROCEED WITHOUT CREDENTIALS
 
             }
         });
- */
+
         /*
         COMMENT ENTIRE BLOCK  IF YOU NEED TO DEBUG WITHOUT LOGGING IN!
-         */
+
         //START HERE
         //btn for login logic
         btn3.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +103,7 @@ REMOVE COMMENT TO ALLOW LOGIN TO PROCEED WITHOUT CREDENTIALS
                         });
             }
         });
-                //END HERE
+              */  //END HERE
     }
 /*
     public void homelayoutButton(View view){
