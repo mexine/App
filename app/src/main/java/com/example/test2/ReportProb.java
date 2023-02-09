@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.*;
 import android.widget.*;
 
@@ -157,10 +158,16 @@ public class ReportProb extends AppCompatActivity {
             }
         });
 
+        String buttonText = getIntent().getStringExtra("button_text");
+        if (buttonText == null) {
+            Log.d("SecondActivity", "buttonText is null");
+        } else {
+            Log.d("SecondActivity", "buttonText: " + buttonText);
+        }
+
+        TextView textViewSet = findViewById(R.id.textView25);
+        textViewSet.setText(buttonText);
     }
-
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

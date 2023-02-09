@@ -16,10 +16,18 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
 
         Button btn = findViewById(R.id.report);
+        Button btnAbout = findViewById(R.id.button7);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainMenu.this,ProbCategory.class));
+            }
+        });
+
+        btnAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainMenu.this,aboutActivity.class));
             }
         });
     }
