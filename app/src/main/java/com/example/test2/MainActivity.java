@@ -1,25 +1,15 @@
 package com.example.test2;
 
-import static android.content.ContentValues.TAG;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,ResetPassword.class));
+                startActivity(new Intent(MainActivity.this,ForgotPassActivity.class));
             }
         });
 
@@ -62,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
 
         /*
         COMMENT ENTIRE BLOCK  IF YOU NEED TO DEBUG WITHOUT LOGGING IN!
@@ -113,4 +105,7 @@ public class MainActivity extends AppCompatActivity {
     public void secondlayoutButton(View view){
         setContentView(R.layout.activity_main);
     }*/
+
+
+
 }

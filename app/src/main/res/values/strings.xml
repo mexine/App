@@ -36,4 +36,9 @@
     <string name="filed_reports">FILED REPORTS</string>
     <string name="about">ABOUT</string>
     <string name="log_out">LOG OUT</string>
+    <string name="reportprob">The main menu is where the “Report a Problem” button will be found, when clicked, you are taken to the Problem Category Section where you can choose the category for the problem you will report.</string>
+    <string name="category">After choosing the right category for the problem, you are taken to the Problem Details Section where you can provide more specific details for the problem, details include photos, location, date and time, description, and the level of urgency of the problem. You are then to check the “Agree to Terms and Conditions” button, signifying that you are aware of how your data will be used, before submitting the problem.</string>
+    <string name="filedrep">The main menu is where the “Filed Reports” button will be found, when clicked, you are taken to the Filed Reports Section where you can view all your filed reports, you are also given the choice to categorize the reports as either “Ongoing” or “Completed” reports for a filtered view of the filed reports.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

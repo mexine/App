@@ -1,12 +1,11 @@
 package com.example.test2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -16,7 +15,7 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
 
         Button btn = findViewById(R.id.report);
-        Button btnAbout = findViewById(R.id.button7);
+        Button btnAbout = findViewById(R.id.about);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,10 +23,19 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        btnAbout.setOnClickListener(new View.OnClickListener() {
+        Button btn4 = findViewById(R.id.about);
+        btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainMenu.this,aboutActivity.class));
+                startActivity(new Intent(MainMenu.this,About.class));
+            }
+        });
+
+        Button btn5 = findViewById(R.id.reports);
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainMenu.this,FiledReports.class));
             }
         });
     }
