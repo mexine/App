@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         //button for register here
         TextView btn = findViewById(R.id.registerHere);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String email = "test2";
+                InputStringHolder.getInstance().setInputString(email);
                 startActivity(new Intent(MainActivity.this,MainMenu.class));
 
             }
