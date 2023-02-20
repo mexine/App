@@ -14,7 +14,7 @@ public class Splashscreen extends AppCompatActivity {
         setContentView(R.layout.entry_splashscreen);
 
 
-        /*Handler handler = new Handler();
+        Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -22,17 +22,9 @@ public class Splashscreen extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 4000);*/
+        }, 1000);
 
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent mainIntent = new Intent(Splashscreen.this, MainActivity.class);
-                startActivity(mainIntent);
-                finish();
-            }
-        }, 4000);
 
     }
 }

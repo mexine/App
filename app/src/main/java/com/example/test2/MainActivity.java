@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = "test3";
+                String email = String.valueOf(EDemail.getText());
                 InputStringHolder.getInstance().setInputString(email);
                 startActivity(new Intent(MainActivity.this,MainMenu.class));
 
